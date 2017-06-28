@@ -11,14 +11,8 @@ describe('Answer', () => {
     )
   })
 
-  it('should render an Answer component that has an paragraph tag with answer text', () => {
-    // console.log(wrapper.debug())
-
-    expect(wrapper.find('p')).toBePresent()
-    expect(wrapper.find('p').text()).toEqual('Launch Academy is a 10-week, immersive bootcamp')
-
-    // OR
-    let pageText = wrapper.text();
-    expect(pageText).toMatch('Launch Academy is a 10-week, immersive bootcamp');
+  it('should render an Answer component that has a paragraph tag with the answer text', () => {
+    expect(wrapper.find("p")).toBePresent()
+    expect(wrapper.find("p").text()).toMatch('Launch Academy is a 10-week, immersive bootcamp')
   })
 })

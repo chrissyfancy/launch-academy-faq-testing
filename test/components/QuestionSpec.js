@@ -6,7 +6,7 @@ describe('Question', () => {
   beforeEach(() => {
     wrapper = mount(
       <Question
-        selected={false}
+        selected={true}
         question={'What is your camp like?'}
       />
     )
@@ -14,16 +14,16 @@ describe('Question', () => {
 
   it('should render a Question component that has an h5 with question text', () => {
     expect(wrapper.find('h5')).toBePresent()
-    expect(wrapper.find('h5').text()).toEqual('What is your camp like?')
+    expect(wrapper.text()).toMatch('What is your camp')
+    expect(wrapper.text()).toEqual('What is your camp like?')
+
   })
 
-  it('should not display the selected classname if the selected prop is false', () => {
-    console.log(wrapper.debug())
-    expect(wrapper.find('.selected-question')).not.toBePresent()
-  })
-
-  // it('should display the selected classname if the selected prop is true', () => {
-  //   console.log(wrapper.debug())
-  //   expect(wrapper.find('.selected-question')).toBePresent()
+  // it('should not display the selected classname if the selected prop is false', () => {
+  //   expect(wrapper.find('.selected-question')).not.toBePresent()
   // })
+
+  it('should display the selected classname if the selected prop is true', () => {
+    expect(wrapper.find('.selected-question')).toBePresent()
+  })
 })
